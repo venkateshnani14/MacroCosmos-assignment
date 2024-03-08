@@ -41,3 +41,6 @@
   }
 }
 #maindivLogin{background-image: url(../public/img/field.jpg);background-position:center;background-repeat: no-repeat;background-size: cover;}
+#homeMainDiv{background-image: linear-gradient(to bottom,rgb(25, 167, 132) 30%,rgb(29, 161, 58) 70%)}
+#homeChildDiv{}
+#mobNumber::placeholder{color:yellow}
