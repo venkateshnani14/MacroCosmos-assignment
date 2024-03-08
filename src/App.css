@@ -44,3 +44,4 @@
 #homeMainDiv{background-image: linear-gradient(to bottom,rgb(25, 167, 132) 30%,rgb(29, 161, 58) 70%)}
 #homeChildDiv{}
 #mobNumber::placeholder{color:yellow}
+#mainDataDiv{min-height: 50vh;}

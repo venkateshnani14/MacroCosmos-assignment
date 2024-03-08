@@ -1,9 +1,15 @@
 import { gsap } from 'gsap'
+import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 const Login = ()=>{
     useEffect(()=>{
     gsap.fromTo('#childdivLogin',{y:-400,opacity:0},{y:0,opacity:1,duration:1.8,ease:'power3.out'})
     },[])
+    const navigate = useNavigate();
+    const eventHandler = (e)=>{
+        e.preventDefault();
+        navigate('/home');
+    }
     return(
         <>
        <div id='maindivLogin' className='h-screen flex justify-center items-center'>
@@ -11,9 +17,9 @@ const Login = ()=>{
        <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl lg:px-3 sm:py-2 pt-4 text-white font-bold text-center'>Login/Signup</p>
             <form className='m-4 px-2'>
                 <div>
-                <div className='m-2 flex justify-center'><input className='rounded leading-tight w-3/4 bg-black bg-opacity-40 text-gray-400 px-1 xl:px-2  py-3 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl' id='Username' type="text" placeholder='Username' /></div>
-                <div className='m-2 flex justify-center'><input id='pw' type='password' className='rounded w-3/4 bg-black leading-tight bg-opacity-40 text-gray-100 px-1 xl:px-2  py-3 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl' placeholder='Password' /></div>
-                <div className='pt-2 m-2 flex justify-center'><button className='bg-blue-500 text-white rounded w-3/4 py-1 lg:px-4 lg:py-2 hover:bg-blue-600 ' type='submit'><p className='text-sm lg:text-md'>Sign In</p></button></div>
+                <div className='m-2 flex justify-center'><input className='rounded leading-tight w-3/4 bg-black bg-opacity-40 text-gray-400 px-1 xl:px-2  py-3 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl' id='Username' type="text" placeholder='Username' required /></div>
+                <div className='m-2 flex justify-center'><input id='pw' type='password' className='rounded w-3/4 bg-black leading-tight bg-opacity-40 text-gray-100 px-1 xl:px-2  py-3 text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl' placeholder='Password' required /></div>
+                <div className='pt-2 m-2 flex justify-center'><button className='bg-blue-500 text-white rounded w-3/4 py-1 lg:px-4 lg:py-2 hover:bg-blue-600 ' onClick={eventHandler} ><p className='text-sm lg:text-xl'>Sign In</p></button></div>
                 </div>
             </form>
             <div className='pb-2 flex flex-col items-center'>
